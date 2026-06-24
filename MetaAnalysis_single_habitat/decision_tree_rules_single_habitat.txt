@@ -1,0 +1,27 @@
+Decision Tree Rules for Best Method (Single Habitat)
+===================================================
+
+|--- beta_true <= 0.80
+|   |--- class: 0
+|--- beta_true >  0.80
+|   |--- error_ratio <= 1.50
+|   |   |--- error_ratio <= 0.75
+|   |   |   |--- n <= 54.00
+|   |   |   |   |--- class: 3
+|   |   |   |--- n >  54.00
+|   |   |   |   |--- class: 3
+|   |   |--- error_ratio >  0.75
+|   |   |   |--- class: 3
+|   |--- error_ratio >  1.50
+|   |   |--- n <= 54.00
+|   |   |   |--- class: 1
+|   |   |--- n >  54.00
+|   |   |   |--- class: 2
+
+
+Class mapping:
+0: Ensemble
+1: Median
+2: ODR
+3: RMA
+4: SMA (Major Axis)

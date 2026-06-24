@@ -1,0 +1,43 @@
+Decision Tree Rules for Best Method
+===================================
+
+|--- beta_true <= 1.20
+|   |--- error_ratio <= 0.75
+|   |   |--- beta_true <= 0.80
+|   |   |   |--- class: 1
+|   |   |--- beta_true >  0.80
+|   |   |   |--- n_habitats <= 9.00
+|   |   |   |   |--- class: 0
+|   |   |   |--- n_habitats >  9.00
+|   |   |   |   |--- class: 0
+|   |--- error_ratio >  0.75
+|   |   |--- beta_true <= 0.80
+|   |   |   |--- error_ratio <= 1.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- error_ratio >  1.50
+|   |   |   |   |--- class: 2
+|   |   |--- beta_true >  0.80
+|   |   |   |--- class: 1
+|--- beta_true >  1.20
+|   |--- error_ratio <= 1.50
+|   |   |--- n_per_habitat <= 54.00
+|   |   |   |--- class: 4
+|   |   |--- n_per_habitat >  54.00
+|   |   |   |--- n_habitats <= 9.00
+|   |   |   |   |--- class: 4
+|   |   |   |--- n_habitats >  9.00
+|   |   |   |   |--- class: 0
+|   |--- error_ratio >  1.50
+|   |   |--- n_habitats <= 9.00
+|   |   |   |--- class: 3
+|   |   |--- n_habitats >  9.00
+|   |   |   |--- class: 3
+
+
+Class mapping:
+0: Deming (MCR)
+1: Ensemble
+2: LMM (Rand. Slopes)
+3: OLS
+4: RMA
+5: Theil-Sen
